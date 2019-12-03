@@ -1,0 +1,11 @@
+---
+- hosts: demo
+  become: yes
+  tasks:
+   - name: Fail task when the command error output prints FAILED
+     command: /usr/bin/ex-command
+     register: cmd_result
+     ignore_errors: yes
+   - name: fail the play if the previous command did not succeed
+     fail: msg="The command failed"
+     when: "'Errno' in cmd_result.msg"

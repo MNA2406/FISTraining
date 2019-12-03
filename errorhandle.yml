@@ -1,0 +1,9 @@
+---
+- hosts: demo
+  become: yes
+  tasks:
+   - name: Fail
+     command: /bin/false
+     ignore_errors: yes
+   - name: last
+     command: echo EOT

@@ -1,0 +1,12 @@
+---
+- hosts: demo
+
+  become: yes
+
+  tasks:
+
+   - name: print
+
+     command: echo {{myname}}
+
+...

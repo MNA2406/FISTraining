@@ -1,0 +1,16 @@
+---
+- hosts: demo
+  become: yes
+  vars:
+   epic: true
+  tasks:
+   - name: EPIC
+     command: echo "This is EPIC"
+     when: epic
+     register: output
+   - debug: var=output
+   - name: NOT EPIC
+     command: echo "This is not EPIC"
+     when: not epic
+     register: output
+   - debug: var=output.stdout

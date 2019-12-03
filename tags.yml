@@ -1,0 +1,12 @@
+---
+- hosts: demo
+  become: yes
+  tasks:
+   - name: firsttask
+     command: echo first
+     tags:
+       - first
+   - name: 2nd taks
+     command: echo 2nd
+     tags:
+       - second

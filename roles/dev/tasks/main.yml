@@ -1,0 +1,3 @@
+- name: dev role
+  command: echo {{name}}
+  notify: dev handler

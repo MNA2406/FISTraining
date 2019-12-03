@@ -1,0 +1,10 @@
+---
+- hosts: demo
+  become: yes
+  tasks:
+   - name: Install apache on ubuntu
+     command: apt -y install apache2
+     when: ansible_os_family == "Debian" or ansible_os_family == "Fedora"
+   - name: Install httpd on Redhat
+     command: yum -y install httpd
+     when: ansible_os_family == "Redhat" and ansisble_pkg_mgr == "yum"
