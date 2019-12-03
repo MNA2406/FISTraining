@@ -1,0 +1,20 @@
+--- # Test var
+- hosts: demo
+
+  become: yes
+
+  vars:
+
+  - pkg: apache2
+
+  tasks:
+
+   - name: install apache
+
+     apt: name={{pkg}} state=present
+
+   - name: start apache
+
+     service: name={{pkg}} state=started
+
+...
