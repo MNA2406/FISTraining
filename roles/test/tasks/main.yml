@@ -1,3 +1,0 @@
-- name: dev role
-  command: echo {{name}}
-  notify: mytest
